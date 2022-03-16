@@ -11,7 +11,6 @@ class GraphQLConfiguration {
       link: httpLink,
       cache: GraphQLCache(
         store: InMemoryStore()
-
       ),
     ),
   );

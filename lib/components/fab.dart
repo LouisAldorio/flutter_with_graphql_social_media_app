@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app/components/create_post.dart';
 import 'package:social_media_app/store/actions.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:social_media_app/store/app_state.dart';
@@ -13,6 +14,10 @@ class CustomFloatingActionButton extends StatefulWidget {
 class _CustomFloatingActionButtonState extends State<CustomFloatingActionButton> {
   @override
   Widget build(BuildContext context) {
+    print("builded");
+    // final mediaContext = MediaQuery.of(context);
+    // final themeContext = Theme.of(context);
+
     return Padding(
       padding: EdgeInsets.only(top: 20),
       child: SizedBox(
@@ -24,7 +29,15 @@ class _CustomFloatingActionButtonState extends State<CustomFloatingActionButton>
                 backgroundColor: Colors.transparent,
                 elevation: 0,
                 onPressed: () {
-                  callback();
+                  // this callback will mutate the global state
+                  // callback();
+
+                  showModalBottomSheet<void>(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                    return CreatePostForm();
+                  });
                 },
                 child: Container(
                   height: 75,

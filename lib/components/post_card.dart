@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:social_media_app/pages/post.dart";
+import 'package:flutter_share/flutter_share.dart';
 
 class PostCard extends StatelessWidget {
 
@@ -15,6 +16,15 @@ class PostCard extends StatelessWidget {
     required this.author,
     required this.id
   }) : super(key: key);
+
+  Future<void> share() async {
+    await FlutterShare.share(
+        title: title,
+        text: body,
+        linkUrl: 'https://flutter.dev/',
+        chooserTitle: 'Share Posts');
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +58,8 @@ class PostCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
-                  child: const Text('Comments'),
-                  onPressed: () {},
-                ),
-                const SizedBox(width: 8),
-
-                TextButton(
                   child: const Text('Share'),
-                  onPressed: () {},
+                  onPressed: share,
                 ),
                 const SizedBox(width: 8),
               ],

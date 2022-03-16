@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:social_media_app/components/post_card.dart';
 import 'package:social_media_app/services/post.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 
 class Posts extends StatefulWidget {
   const Posts({Key? key}) : super(key: key);

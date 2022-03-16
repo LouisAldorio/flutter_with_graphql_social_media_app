@@ -16,6 +16,7 @@ import "package:social_media_app/store/app_state.dart";
 
 GraphQLConfiguration graphQLConfiguration = GraphQLConfiguration();
 
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
